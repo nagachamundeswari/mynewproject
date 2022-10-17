@@ -1,14 +1,11 @@
 #include<stdio.h>
 #include<unistd.h>
-#include<stdlib.h>
 void main()
 {
 	int x;
-	char*const argv[]={"ls",0};
-	x=execvp("ps",argv);
+	char *const argv[]={"ps",0};
+	x=execvp("ls",argv);
 	printf("%d\n",x);
+	if(x<0)
+		printf("fail to image replace\n");
 }
-
-
-
-
